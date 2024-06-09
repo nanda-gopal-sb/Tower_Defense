@@ -9,7 +9,11 @@ public class Draw : MonoBehaviour
     public bool TargetSelected = false;
     private void Update() 
     {
-        if(level_1.towerGuns[0].isChanged&&TargetSelected)
+        if(level_1.OpsFinish)
+        {
+            DeleteLine();
+        }
+        if(level_1.OpsFinish && TargetSelected)
         {
             TargetSelected = false;
         }
@@ -57,5 +61,9 @@ public class Draw : MonoBehaviour
             }
             PreviousPosMouse = currentPosition;
         }
+    }
+    public void DeleteLine()
+    {
+        Path.positionCount = 0 ; 
     }
 }

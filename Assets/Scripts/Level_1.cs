@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Level_1 : MonoBehaviour
 {
-    private Vector3[] TowerPos = new Vector3[2];
+    private Vector3[] TowerPos = new Vector3[1];
     public TowerGunScript[] towerGuns;
     public bool OpsFinish = false;
     public bool StopProjectile()
     {
-        if (towerGuns[0].isChanged)
+        if (towerGuns[0].isDead)
         {
             return true;
         }
@@ -44,7 +44,9 @@ public class Level_1 : MonoBehaviour
         {
             if (towerGuns[0].IsDead())
             {
-                towerGuns[0].IncreaseHealth(2);
+                OpsFinish = true;
+                towerGuns[0].Destroy();
+                //towerGuns[0].IncreaseHealth(2);
             }
             if (!towerGuns[0].IsDead())
             {

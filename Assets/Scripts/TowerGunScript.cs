@@ -3,20 +3,17 @@ using UnityEngine.UI;
 
 public class TowerGunScript : MonoBehaviour
 {
-    public SpriteRenderer Sprite ;
-    public Sprite HomeSprite ;
-    public Sprite EnemySprite;  
     private float nextFire;
     private Vector3 Direction;
     private float fireRate = 1f;
     private float Damage = 1f;
-    private float TowerHealth = 6;
+    public bool isDead = false ; 
+    private float TowerHealth = 4;
     public Transform HomeBase;
     RaycastHit2D collide;
     public HomeBase Home;
     public Projectile projectile;
     public Text Score; 
-    public bool isChanged = false ; 
     public Vector3 GetPos()
     {
         return gameObject.transform.position;
@@ -28,18 +25,18 @@ public class TowerGunScript : MonoBehaviour
     public void DecreaseHealth(float hit)
     {
         TowerHealth -= hit;
+        Debug.Log(TowerHealth);
         Score.text = TowerHealth.ToString();
     }
-    public void IncreaseHealth(float hit)
-    {
-        TowerHealth += hit;
-        Score.text = TowerHealth.ToString();
-    }
+    // public void IncreaseHealth(float hit)
+    // {
+    //     TowerHealth += hit;
+    //     Score.text = TowerHealth.ToString();
+    // }
     public bool IsDead()
     {
-        if (TowerHealth <= 0 || isChanged)
+        if (TowerHealth-2 <= 0 )
         {
-            Change();
             return true;
         }
         return false;
@@ -54,7 +51,7 @@ public class TowerGunScript : MonoBehaviour
 
     void Update()
     {
-        if (!Home.IsDead()&&!isChanged)
+        if (!Home.IsDead()&&!isDead)
         {
             Shoot();
         }
@@ -84,11 +81,13 @@ public class TowerGunScript : MonoBehaviour
             Home.Destroy();
         }
     }
-
-    public void Change()
-    {
-        isChanged = true;
-        projectile.Return();
-        Sprite.sprite = HomeSprite;
+    public void Destroy(){
+        Destroy(gameObject);
     }
+    // public void Change()
+    // {
+    //     isChanged = true;
+    //     projectile.Return();
+    //     Sprite.sprite = HomeSprite;
+    // }
 }
