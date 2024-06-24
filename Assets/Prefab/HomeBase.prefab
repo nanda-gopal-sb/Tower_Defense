@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 604683080261651935}
   - component: {fileID: 5514503573704777469}
   - component: {fileID: 6135557658928127968}
+  - component: {fileID: 8459368706623085539}
   m_Layer: 0
   m_Name: FootSoldier
   m_TagString: Untagged
@@ -130,6 +131,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.33}
   m_EdgeRadius: 0
+--- !u!114 &8459368706623085539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193869777769524158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac731bfda7c484b48bb68cb6d1ff8fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draw: {fileID: 0}
+  level_1: {fileID: 0}
 --- !u!1 &1168870958868951421
 GameObject:
   m_ObjectHideFlags: 0

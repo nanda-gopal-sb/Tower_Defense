@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-
 public class HomeBase : MonoBehaviour
 {
     private float Defense = 100f;

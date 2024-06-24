@@ -1,7 +1,8 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Offense : MonoBehaviour
 {
+     
     public Draw draw;
     Vector3 CurrentPos;
     int moveIndex = 0;
@@ -10,6 +11,7 @@ public class Offense : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
         OriginalPos = gameObject.transform.position;
     }
 

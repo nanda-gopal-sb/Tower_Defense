@@ -9,13 +9,10 @@ public class Draw : MonoBehaviour
     public bool TargetSelected = false;
     private void Update() 
     {
-        if(level_1.OpsFinish)
-        {
-            DeleteLine();
-        }
         if(level_1.OpsFinish && TargetSelected)
         {
             TargetSelected = false;
+            DeleteLine();
         }
         if(Input.GetMouseButton(0)&&!TargetSelected)
         {
@@ -35,13 +32,14 @@ public class Draw : MonoBehaviour
     {
         Positions = new Vector3[Path.positionCount];
         Path.GetPositions(Positions);
-        if (!level_1.TargetReached(Positions[^1]))
-        {
-            Positions = new Vector3[0];
-            Path.positionCount = 1;
-            TargetSelected = false;
-            return;
-        }
+        Debug.Log(Positions.Length);
+        // if (!level_1.TargetReached(Positions[^1]))
+        // {
+        //     Positions = new Vector3[0];
+        //     Path.positionCount = 1;
+        //     TargetSelected = false;
+        //     return;
+        // }
         TargetSelected = true;
     }
     public void LineDraw()
@@ -65,5 +63,7 @@ public class Draw : MonoBehaviour
     public void DeleteLine()
     {
         Path.positionCount = 0 ; 
+        Positions = new Vector3[0];
+        //Debug.Log(Positions);
     }
 }

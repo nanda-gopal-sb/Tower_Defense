@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5546568560639565239}
   - component: {fileID: 1782046304666932238}
+  - component: {fileID: 8401856095580320712}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -135,3 +136,19 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8401856095580320712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849756952170149650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84fc1acffc8a6740bad47b5271652cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level_1: {fileID: 0}
+  Path: {fileID: 1782046304666932238}
+  Positions: []
+  TargetSelected: 0
